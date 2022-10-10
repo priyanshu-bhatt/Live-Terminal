@@ -1,0 +1,54 @@
+<h1> Live Command Prompt </h1>
+<pre><div id="d1">Waiting ... </div></pre>
+<form>
+Command: <input id="cmd",name="cname"/>
+<input type="button" value="run" onclick="send()" />
+</form>
+
+<script>
+
+        function send(){
+
+                        command=document.getElementById("cmd").value;
+                        const myhttp=new XMLHttpRequest();
+        url="http://43.205.228.173/cgi-bin/cmd.py?cmd="+command;                        myhttp.open("GET",url,true)
+                        myhttp.send();
+                        myhttp.onreadystatechange=function(){
+                                        if(this.readyState==4) {
+        document.getElementById("d1").innerHTML=myhttp.responseText;
+                }
+        }
+}
+</script>
+<div id="guide"><b>Learn More About Linux Commands:</b><br/>
+        <button><a href="https://www.freecodecamp.org/news/the-linux-commands-handbook/">
+        Resource</a>
+        </button></div>
+
+<style>
+
+#d1{
+
+background-color:black;
+color:white;
+width:75%;
+height:80%;
+
+}
+h1{
+        padding:2px;
+        text-align:center;
+
+
+}
+#guide{
+
+margin-top:-500px;
+margin-left:1020px;
+font-size:20px;
+}
+a{
+
+        text-decoration:none;
+}
+</style>
