@@ -12,7 +12,7 @@ Command: <input id="cmd",name="cname"/>
 
                         command=document.getElementById("cmd").value;
                         const myhttp=new XMLHttpRequest();
-        url="http://43.205.228.173/cgi-bin/cmd.py?cmd="+command;                        myhttp.open("GET",url,true)
+        url="http://43.205.228.173/cgi-bin/index.py?cmd="+command;                        myhttp.open("GET",url,true)
                         myhttp.send();
                         myhttp.onreadystatechange=function(){
                                         if(this.readyState==4) {
